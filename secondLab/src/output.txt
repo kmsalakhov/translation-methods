@@ -1,0 +1,23 @@
+digraph treeGraph {
+    0 [label="BLOCK"]
+    0 -> 1
+    1 [label="INIT"]
+    1 -> 2
+    2 [label="INIT_WORD"]
+    2 -> 3
+    3 [label="VAR"]
+    1 -> 4
+    4 [label="NAME"]
+    1 -> 5
+    5 [label="COLON"]
+    1 -> 6
+    6 [label="INT"]
+    1 -> 7
+    7 [label="START_VAL"]
+    7 -> 8
+    8 [label="EQ"]
+    7 -> 9
+    9 [label="NUMBER"]
+    1 -> 10
+    10 [label="SEMICOLON"]
+}

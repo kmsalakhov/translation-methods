@@ -5,9 +5,7 @@ import LexicalAnalyzer.KotlinTokens;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.StringReader;
 
 public class KotlinAnalyzerTest {
     @Test
@@ -55,8 +53,7 @@ public class KotlinAnalyzerTest {
     }
 
     private KotlinAnalyzer fromString(String s) {
-        InputStream is = new ByteArrayInputStream(s.getBytes());
-        return new KotlinAnalyzer(new InputStreamReader(is));
+        return new KotlinAnalyzer(new StringReader(s));
     }
 
     private void spaceTest(String str, KotlinTokens token) {

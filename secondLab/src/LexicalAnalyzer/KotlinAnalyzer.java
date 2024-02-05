@@ -1,16 +1,16 @@
 package LexicalAnalyzer;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class KotlinAnalyzer implements LexicalAnalyzer<KotlinTokens> {
-    int charNow;
-    private final BufferedReader reader;
+    private final Reader reader;
+
+    private int charNow;
     private KotlinTokens token;
 
-    public KotlinAnalyzer(InputStreamReader inputStreamReader) {
-        reader = new BufferedReader(inputStreamReader);
+    public KotlinAnalyzer(Reader reader) {
+        this.reader = reader;
         try {
             charNow = reader.read();
         } catch (IOException e) {

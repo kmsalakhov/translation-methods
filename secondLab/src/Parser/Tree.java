@@ -2,13 +2,12 @@ package Parser;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class Tree {
     private final String node;
     private final List<Tree> children;
 
-    public Tree(String node, Tree ... children) {
+    public Tree(String node, Tree... children) {
         this.node = node;
         this.children = Arrays.asList(children);
     }
@@ -31,6 +30,24 @@ public class Tree {
 
     @Override
     public boolean equals(Object obj) {
-        return Objects.equals(toString(), obj.toString());
+        if (obj instanceof Tree anotherTree) {
+            if (anotherTree.node.equals(node) && anotherTree.children.size() == children.size()) {
+                for (int i = 0; i < children.size(); i++) {
+                    if (children.get(i).equals(anotherTree.children.get(i))) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getNode() {
+        return node;
+    }
+
+    public List<Tree> getChildren() {
+        return children;
     }
 }
