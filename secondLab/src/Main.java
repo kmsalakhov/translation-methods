@@ -26,6 +26,8 @@ public class Main {
             System.out.printf("Can't find file: %s", e);
         } catch (IOException e) {
             System.out.printf("Can't create reader: %s", e);
+        } catch (ParseException e) {
+            System.out.printf("Cannot parse: %s", e);
         }
     }
 }

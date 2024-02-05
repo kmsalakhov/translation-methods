@@ -1,1 +1,3 @@
 var abacaba: Int = 12;
+var abacaba: Int = 12;
+var abacaba: Int = 12;
